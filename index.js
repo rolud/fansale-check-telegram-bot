@@ -1,20 +1,15 @@
 const axios = require('axios')
 const TelegramBot = require('node-telegram-bot-api')
 const fs = require('fs')
-const path = require('path')
-
-const INTERVAL = 300000
-// const INTERVAL = 4000
-
-// const EVENT_ID = '12763527' // BRUNORI lucca
-// const EVENT_ID = '14946652' // PTN MATERA
-
-const FANSALE_BUY_URL = 'https://www.fansale.it/fansale/tickets/pop-amp-rock/pinguini-tattici-nucleari/558153/14946652'
-const FANSALE_BUY_BASE_URL = 'https://www.fansale.it'
 
 const { TELEGRAM_TOKEN } = require('./config')
 
-const bot = new TelegramBot(TELEGRAM_TOKEN, {polling:true})
+const INTERVAL = 300000
+
+const FANSALE_BUY_BASE_URL = 'https://www.fansale.it'
+
+
+const bot = new TelegramBot(TELEGRAM_TOKEN, { polling:true })
 
 const axiosInstance = axios.create({
     baseURL: 'https://www.fansale.it/',
